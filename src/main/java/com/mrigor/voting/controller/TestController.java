@@ -14,23 +14,6 @@ import java.util.List;
 
 @RestController
 public class TestController {
-    @PersistenceContext
-    EntityManager em;
 
-    @GetMapping("/")
-    @Transactional
-    List<Dish> test() {
-        Menu menu = new Menu();
-        em.find(Menu.class,menu);
-        Restaurant restaurant = new Restaurant("Restaurant 1", menu);
-        em.persist(restaurant);
-        List<Dish> dishes = new ArrayList<>();
-        menu.setDishes(dishes);
 
-        dishes.add(new Dish("food1", 10.25));
-        dishes.add(new Dish("food2", 1.00));
-        em.persist(restaurant);
-        System.out.println(restaurant);
-        return dishes;
-    }
 }

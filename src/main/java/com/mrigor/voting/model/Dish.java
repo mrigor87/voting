@@ -1,6 +1,7 @@
 package com.mrigor.voting.model;
 
 import javax.persistence.Entity;
+import javax.persistence.SequenceGenerator;
 
 @Entity
 public class Dish extends BaseEntity {
@@ -38,6 +39,13 @@ public class Dish extends BaseEntity {
         this.price = price;
     }
 
-
-
+    @Override
+    public String toString() {
+        final StringBuilder sb = new StringBuilder("Dish{");
+        sb.append("id=").append(id);
+        sb.append(", name='").append(name).append('\'');
+        sb.append(", price=").append(price);
+        sb.append('}');
+        return sb.toString();
+    }
 }

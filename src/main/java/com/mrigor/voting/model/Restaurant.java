@@ -7,8 +7,6 @@ import javax.persistence.Entity;
 public class Restaurant extends BaseEntity {
     private String name;
 
-    @Embedded
-    private Menu menu;
 
     public Restaurant() {
     }
@@ -17,7 +15,6 @@ public class Restaurant extends BaseEntity {
     public Restaurant(Integer id, String name, Menu menu) {
         super(id);
         this.name = name;
-        this.menu = menu;
     }
 
     public Restaurant(String name, Menu menu) {
@@ -36,19 +33,13 @@ public class Restaurant extends BaseEntity {
         this.name = name;
     }
 
-    public Menu getMenu() {
-        return menu;
-    }
-
-    public void setMenu(Menu menu) {
-        this.menu = menu;
-    }
-
     @Override
     public String toString() {
-        return "Restaurant{" +
-                ", id=" + id +
-                "name='" + name + '\'' +
-                '}';
+        final StringBuffer sb = new StringBuffer("Restaurant{");
+        sb.append("id=").append(id);
+        sb.append(", name='").append(name).append('\'');
+
+        sb.append('}');
+        return sb.toString();
     }
 }
