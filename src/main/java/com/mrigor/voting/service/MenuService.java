@@ -1,5 +1,6 @@
 package com.mrigor.voting.service;
 
+import com.mrigor.voting.TO.DishTo;
 import com.mrigor.voting.model.Dish;
 import com.mrigor.voting.model.Menu;
 
@@ -10,9 +11,9 @@ import java.util.List;
  */
 public interface MenuService {
 
-    Menu getMenu (int restaurantId);
+    List<DishTo> getMenu (int restaurantId);
 
-    void setMenu(List<Dish> dishes, int restaurantId);
+    void setMenu(List<DishTo> dishes, int restaurantId);
 
 
 }

@@ -1,29 +1,31 @@
 package com.mrigor.voting.model;
 
-import javax.persistence.Embedded;
-import javax.persistence.Entity;
+import javax.persistence.*;
+import java.util.List;
 
 @Entity
 public class Restaurant extends BaseEntity {
     private String name;
 
 
+   // @Transient
+    //@OneToMany
+    // @JoinColumn(name = "menu_id")
+  //  private List<Dish> dishes;
+
+
+
+
     public Restaurant() {
     }
 
 
-    public Restaurant(Integer id, String name, Menu menu) {
+    public Restaurant(Integer id, String name) {
         super(id);
         this.name = name;
     }
 
-    public Restaurant(String name, Menu menu) {
-        this(null, name, menu);
-    }
 
-    public Restaurant(String name) {
-        this(null, name, null);
-    }
 
     public String getName() {
         return name;
@@ -32,6 +34,8 @@ public class Restaurant extends BaseEntity {
     public void setName(String name) {
         this.name = name;
     }
+
+
 
     @Override
     public String toString() {

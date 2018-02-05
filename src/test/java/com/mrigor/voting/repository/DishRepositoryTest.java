@@ -5,7 +5,6 @@ import com.mrigor.voting.model.Dish;
 import com.mrigor.voting.model.Menu;
 import com.mrigor.voting.model.Restaurant;
 import com.mrigor.voting.repository.dataJpa.CrudDishRepository;
-import com.mrigor.voting.repository.dataJpa.CrudMenuRepository;
 import com.mrigor.voting.repository.dataJpa.CrudRestaurantRepository;
 import org.junit.Test;
 import org.junit.runner.RunWith;
@@ -34,17 +33,11 @@ public class DishRepositoryTest {
     @Autowired
     CrudRestaurantRepository restaurantRepository;
 
-    @Autowired
-    CrudMenuRepository menuRepository;
+
 
 
     @Test
     public void test1() throws Exception {
-/*        List<Dish> all1 = dishRepository.findAll();
-        List<Restaurant> all2 = restaurantRepository.findAll();*/
-        Menu byRestaurantId = menuRepository.getByRestaurantId(100000);
-        List<Menu> all = menuRepository.findAll();
-        System.out.println(all);
 
     }
 

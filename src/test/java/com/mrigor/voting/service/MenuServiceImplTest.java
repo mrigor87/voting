@@ -1,5 +1,6 @@
 package com.mrigor.voting.service;
 
+import com.mrigor.voting.TO.DishTo;
 import com.mrigor.voting.VotingApplication;
 import com.mrigor.voting.model.Dish;
 import com.mrigor.voting.util.exception.NotFoundException;
@@ -20,7 +21,7 @@ import static org.junit.Assert.*;
  */
 @SpringBootTest(classes = VotingApplication.class)
 @RunWith(SpringJUnit4ClassRunner.class)
-//@Sql(value = "classpath:data.sql")
+@Sql(value = "classpath:data.sql")
 public class MenuServiceImplTest {
     @Autowired
     MenuService service;
@@ -37,12 +38,13 @@ public class MenuServiceImplTest {
 
     @Test
     public void setMenu() throws Exception {
-        List<Dish> newDishes= Arrays.asList(new Dish("new dish1",28.21),
-                new Dish("new dish2",28.21),
-                new Dish("new dish3",21.21),
-                new Dish("new dish4",22.21),
-                new Dish("new dish5",23.21));
-        service.setMenu(newDishes,1);
+        List<DishTo> newDishes= Arrays.asList(
+                new DishTo("new dish1",28.21),
+                new DishTo("new dish2",28.21),
+                new DishTo("new dish3",21.21),
+                new DishTo("new dish4",22.21),
+                new DishTo("new dish5",23.21));
+        service.setMenu(newDishes,100000);
         System.out.println(service.getMenu(1));
     }
 
