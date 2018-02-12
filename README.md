@@ -1,6 +1,6 @@
 # voting
 
-Design and implement a JSON API using Hibernate/Spring/SpringMVC (without frontend).
+Design and implement a REST API using Hibernate/Spring/SpringMVC (without frontend).
 
 
 Build a voting system for deciding where to have lunch.
