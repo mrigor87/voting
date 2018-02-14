@@ -1,8 +1,6 @@
 package com.mrigor.voting.service;
 
-import com.mrigor.voting.TO.DishTo;
-import com.mrigor.voting.model.Dish;
-import com.mrigor.voting.model.Menu;
+import com.mrigor.voting.to.DishTo;
 
 import java.util.List;
 

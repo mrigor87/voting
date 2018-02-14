@@ -1,4 +1,4 @@
-package com.mrigor.voting.TO;
+package com.mrigor.voting.to;
 
 import com.mrigor.voting.model.Dish;
 

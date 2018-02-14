@@ -7,12 +7,15 @@ import org.springframework.data.domain.Persistable;
 import javax.persistence.*;
 
 import com.fasterxml.jackson.annotation.JsonAutoDetect;
+
+import java.io.Serializable;
+
 import static com.fasterxml.jackson.annotation.JsonAutoDetect.Visibility.ANY;
 import static com.fasterxml.jackson.annotation.JsonAutoDetect.Visibility.NONE;
 
 @MappedSuperclass
 @JsonAutoDetect(fieldVisibility = ANY, getterVisibility = NONE, isGetterVisibility = NONE, setterVisibility = NONE)
-public class BaseEntity implements Persistable<Integer> {
+public class BaseEntity implements Persistable<Integer>, Serializable {
     public static final int START_SEQ = 1;
 
     @Id

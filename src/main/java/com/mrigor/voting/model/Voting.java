@@ -1,12 +1,18 @@
 package com.mrigor.voting.model;
 
 import javax.persistence.Entity;
+import javax.persistence.ManyToOne;
+import javax.persistence.OneToMany;
 
 @Entity
 public class Voting extends BaseEntity{
 
+    @ManyToOne
     private User user;
+
+    @ManyToOne
     private Restaurant restaurant;
+
     private int rating;
 
 

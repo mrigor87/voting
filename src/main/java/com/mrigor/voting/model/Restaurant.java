@@ -1,10 +1,11 @@
 package com.mrigor.voting.model;
 
 import javax.persistence.*;
+import java.io.Serializable;
 import java.util.List;
 
 @Entity
-public class Restaurant extends BaseEntity {
+public class Restaurant extends BaseEntity implements Serializable {
     private String name;
 
 

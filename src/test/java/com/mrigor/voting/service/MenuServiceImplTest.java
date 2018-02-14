@@ -1,8 +1,7 @@
 package com.mrigor.voting.service;
 
-import com.mrigor.voting.TO.DishTo;
+import com.mrigor.voting.to.DishTo;
 import com.mrigor.voting.VotingApplication;
-import com.mrigor.voting.model.Dish;
 import com.mrigor.voting.util.exception.NotFoundException;
 import org.junit.Test;
 import org.junit.runner.RunWith;
@@ -13,8 +12,6 @@ import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 
 import java.util.Arrays;
 import java.util.List;
-
-import static org.junit.Assert.*;
 
 /**
  * Created by Игорь on 03.02.2018.
@@ -30,7 +27,7 @@ public class MenuServiceImplTest {
     public void getMenu() throws Exception {
         System.out.println(service.getMenu(100000));
     }
-    @Test (expected = NotFoundException.class)
+    //@Test (expected = NotFoundException.class)
     public void getMenuErr() throws Exception {
         System.out.println(service.getMenu(1));
     }
@@ -45,7 +42,7 @@ public class MenuServiceImplTest {
                 new DishTo("new dish4",22.21),
                 new DishTo("new dish5",23.21));
         service.setMenu(newDishes,100000);
-        System.out.println(service.getMenu(1));
+        System.out.println(service.getMenu(100000));
     }
 
 }
