@@ -1,6 +1,7 @@
 package com.mrigor.voting.service;
 
 import com.mrigor.voting.model.Restaurant;
+import com.mrigor.voting.to.RestaurantTo;
 import com.mrigor.voting.util.exception.NotFoundException;
 
 import java.util.List;
@@ -10,9 +11,9 @@ import java.util.List;
  */
 public interface RestaurantService {
 
-    List<Restaurant> getAll();
+    List<RestaurantTo> getAll();
 
-    Restaurant get(int id) throws NotFoundException;
+    RestaurantTo get(int id) throws NotFoundException;
 
     void delete (int id) throws NotFoundException ;
 

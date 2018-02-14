@@ -23,5 +23,6 @@ public class UserServiceImpl implements UserService {
         User user = userRepository.getOne(userId);
         Restaurant restaurant=restaurantRepository.getOne(restaurantId);
         Voting voting=new Voting(user,restaurant,rating);
+        votingRepository.save(voting);
     }
 }

@@ -2,6 +2,7 @@ package com.mrigor.voting.controller.admin;
 
 import com.mrigor.voting.model.Restaurant;
 import com.mrigor.voting.service.RestaurantService;
+import com.mrigor.voting.to.RestaurantTo;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
@@ -17,12 +18,12 @@ public class AdminRestaurantController {
     RestaurantService service;
 
     @GetMapping("/")
-    public List<Restaurant> getAll() {
+    public List<RestaurantTo> getAll() {
         return service.getAll();
     }
 
     @GetMapping("/{id}")
-    public Restaurant get(@PathVariable int id) {
+    public RestaurantTo get(@PathVariable int id) {
 
         return service.get(id);
     }

@@ -4,10 +4,25 @@ import java.io.Serializable;
 
 
 public class RestaurantTo implements Serializable {
+    private int id;
     private String name;
     private int overallRating;
 
     public RestaurantTo() {
+    }
+
+    public RestaurantTo(int id, String name, int overallRating) {
+        this.id = id;
+        this.name = name;
+        this.overallRating = overallRating;
+    }
+
+    public int getId() {
+        return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
     }
 
     public String getName() {
@@ -29,7 +44,8 @@ public class RestaurantTo implements Serializable {
     @Override
     public String toString() {
         return "RestaurantTo{" +
-                "name='" + name + '\'' +
+                "id=" + id +
+                ", name='" + name + '\'' +
                 ", overallRating=" + overallRating +
                 '}';
     }

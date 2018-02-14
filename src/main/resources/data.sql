@@ -10,8 +10,6 @@ alter table menu_dishes add constraint UK_6g02saeub38o9u6ig7bf4cjf2 unique (dish
 
 
 DELETE FROM dish;
-/*DELETE FROM menu_dishes;*/
-/*DELETE FROM menu;*/
 DELETE FROM restaurant;
 DELETE FROM user;
 DELETE FROM voting;
@@ -28,26 +26,5 @@ VALUES ('Dish1',2.1,100000),
   ('Dish2',3.2,100000),
   ('Dish13',4.3,100000);
 
-
-/*INSERT INTO MENU (RESTAURANT_ID)
-    VALUES (1);*/
-
-//create table menu_dishes (menu_id integer default nextval('global_seq') not null, dishes_id integer default nextval('global_seq') not null)
-
-
-
-/*SELECT * FROM MENU;*/
-
-
-/*INSERT INTO menu_dishes (menu_id,dishes_id)
-    VALUES (100002,100003);*/
-
-
-/*SELECT * FROM MENU_DISHES;*/
-
-/*
-ALTER SEQUENCE global_seq RESTART WITH 100000;
-
-INSERT INTO departments (name)
-VALUES ('Marketing'),
-  ('Production');*/
+INSERT INTO user (name)
+    VALUES ('user1'),('User2')
