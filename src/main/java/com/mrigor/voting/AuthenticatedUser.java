@@ -1,4 +1,4 @@
-package com.mrigor;
+package com.mrigor.voting;
 
 import org.springframework.security.core.GrantedAuthority;
 

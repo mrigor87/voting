@@ -1,11 +1,9 @@
 package com.mrigor.voting.controller.profile;
 
-import com.mrigor.AuthenticatedUser;
-import com.mrigor.voting.model.Restaurant;
+import com.mrigor.voting.AuthenticatedUser;
 import com.mrigor.voting.service.MenuService;
 import com.mrigor.voting.service.RestaurantService;
 import com.mrigor.voting.service.UserService;
-import com.mrigor.voting.service.VotingService;
 import com.mrigor.voting.to.DishTo;
 import com.mrigor.voting.to.RestaurantTo;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -26,6 +24,7 @@ public class ProfileController {
 
     @GetMapping("/")
     public List<RestaurantTo> getAll() {
+
         return restaurantService.getAll();
     }
 

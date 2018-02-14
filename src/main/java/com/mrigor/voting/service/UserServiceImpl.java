@@ -7,6 +7,7 @@ import com.mrigor.voting.repository.dataJpa.CrudRestaurantRepository;
 import com.mrigor.voting.repository.dataJpa.CrudUserRepository;
 import com.mrigor.voting.repository.dataJpa.CrudVotingRepository;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.cache.annotation.CacheEvict;
 import org.springframework.stereotype.Service;
 
 @Service
@@ -19,10 +20,12 @@ public class UserServiceImpl implements UserService {
     CrudRestaurantRepository restaurantRepository;
 
     @Override
+  //  @CacheEvict(value = "restaurant")
     public void vote(int userId, int restaurantId, int rating) {
         User user = userRepository.getOne(userId);
         Restaurant restaurant=restaurantRepository.getOne(restaurantId);
         Voting voting=new Voting(user,restaurant,rating);
         votingRepository.save(voting);
+
     }
 }
