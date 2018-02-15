@@ -21,18 +21,13 @@ import javax.sql.DataSource;
  * Created by Игорь on 15.02.2018.
  */
 @Configuration
+//@EnableWebSecurity
 public class SecurityConfig extends WebSecurityConfigurerAdapter {
 
 
     //private BCryptPasswordEncoder passwordEncoder = new BCryptPasswordEncoder();
 
 
-    @Override
-    @Bean
-    public AuthenticationManager authenticationManagerBean() throws Exception {
-
-        return super.authenticationManagerBean();
-    }
 
 
 
@@ -41,8 +36,7 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
     protected void configure(HttpSecurity http) throws Exception { // @formatter:off
         http
 
-                .requestMatchers().antMatchers("/","/login","/logout", "/oauth/authorize", "/oauth/confirm_access", "/profile/**","/v2/api-docs", "/configuration/ui", "/swagger-resources/**", "/configuration/security", "/swagger-ui.html", "/webjars/**")
-                .and()
+
                 .csrf().disable()
                 .formLogin()
                 //   .loginPage("/login")
@@ -53,7 +47,7 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
          //       .and()
 
                 //.and()
-                .and().authorizeRequests().antMatchers("/profile/**","/","/swagger-ui.html"). hasRole("ADMIN")
+                .and().authorizeRequests().antMatchers("/profile/**","/admin/**","/swagger-ui.html**").authenticated()
 
         ;
 
