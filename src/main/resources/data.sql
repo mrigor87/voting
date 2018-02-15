@@ -11,8 +11,9 @@ alter table menu_dishes add constraint UK_6g02saeub38o9u6ig7bf4cjf2 unique (dish
 
 DELETE FROM dish;
 DELETE FROM restaurant;
+DELETE FROM user_roles;
 DELETE FROM user;
-DELETE FROM voting;
+
 
 ALTER SEQUENCE global_seq RESTART WITH 100000;
 
@@ -26,5 +27,10 @@ VALUES ('Dish1',2.1,100000),
   ('Dish2',3.2,100000),
   ('Dish13',4.3,100000);
 
-INSERT INTO user (name)
-    VALUES ('user1'),('User2')
+INSERT INTO user (name, PASSWORD)
+    VALUES ('user1','111111'),('User2','111111');
+
+INSERT INTO USER_ROLES (USER_ID, ROLE)
+    VALUES (100005,'ROLE_ADMIN'),(100006,'ROLE_USER');
+
+

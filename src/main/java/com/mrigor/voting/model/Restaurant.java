@@ -6,18 +6,29 @@ import javax.persistence.*;
 import javax.persistence.Entity;
 import java.io.Serializable;
 import java.util.List;
+import java.util.Set;
 
 @Entity
 public class Restaurant extends BaseEntity implements Serializable {
     private String name;
 
+    @OneToMany (mappedBy = "votedFor")
+/*    @JoinTable(name = "voting",
+            joinColumns = @JoinColumn(name = "restaurant_id"),
+            inverseJoinColumns = @JoinColumn(name = "user_id"))*/
+    private Set<User> voted;
 
-   // @Transient
+    public Set<User> getVoted() {
+        return voted;
+    }
+
+    public void setVoted(Set<User> voted) {
+        this.voted = voted;
+    }
+    // @Transient
     //@OneToMany
     // @JoinColumn(name = "menu_id")
-  //  private List<Dish> dishes;
-
-
+    //  private List<Dish> dishes;
 
 
     public Restaurant() {
@@ -30,7 +41,6 @@ public class Restaurant extends BaseEntity implements Serializable {
     }
 
 
-
     public String getName() {
         return name;
     }
@@ -38,7 +48,6 @@ public class Restaurant extends BaseEntity implements Serializable {
     public void setName(String name) {
         this.name = name;
     }
-
 
 
     @Override

@@ -1,5 +1,7 @@
 package com.mrigor.voting.to;
 
+import com.mrigor.voting.model.Restaurant;
+
 import java.io.Serializable;
 
 
@@ -15,6 +17,10 @@ public class RestaurantTo implements Serializable {
         this.id = id;
         this.name = name;
         this.overallRating = overallRating;
+    }
+
+    public RestaurantTo (Restaurant restaurant){
+        this(restaurant.getId(),restaurant.getName(),restaurant.getVoted().size());
     }
 
     public int getId() {
